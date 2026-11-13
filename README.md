@@ -60,9 +60,11 @@ jobs:
       - name: Maximize build space
         uses: darktohka/maximize-build-space@master
         with:
-          root-reserve-mb: 512
-          swap-size-mb: 1024
           remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout
         uses: actions/checkout@v3
 
