@@ -44,7 +44,7 @@ This results in the space of the previously installed packages and the temp disk
 
 You should most probably use this action as the first build step, even **before** `actions/checkout`. Since this action mounts a volume over the current working directory by default, the current content of the working directory will be inaccessible afterwards.
 
-With the default configuration, you're gaining about 7-8 GB of disk space. You can trade in swap space or disk reserve to get more and remove software that is unnecessary for your build job (see [this table](https://github.com/easimon/maximize-build-space/blob/test-report/README.md) for examples and the expectable amount of space.
+With the default configuration, you're gaining about 7-8 GB of disk space. You can trade in swap space or disk reserve to get more and remove software that is unnecessary for your build job (see [this table](https://github.com/darktohka/maximize-build-space/blob/test-report/README.md) for examples and the expectable amount of space.
 
 When removing software, consider that the removal of large amounts of files (which this is) can take minutes to complete. On the upside, you'll get more than 60 GB of disk space available if you actually need it.
 
@@ -58,7 +58,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Maximize build space
-        uses: easimon/maximize-build-space@master
+        uses: darktohka/maximize-build-space@master
         with:
           root-reserve-mb: 512
           swap-size-mb: 1024
